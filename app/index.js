@@ -3,16 +3,37 @@ const Generator = require('yeoman-generator');
 const chalk = require('chalk');  // CLI colors
 const yosay = require('yosay');  // like cowsay but for yoeman
 const _ = require('lodash');     // utility library
-const licenses = require('generator-license').licenses
+const licenses = require('generator-license').licenses;
+const execSync = require('child_process').execSync;
 
 module.exports = class extends Generator {
+  // print a debug message if in debug mode
   debug(...args) {
+    if (this.config.debug == false) {
+      return;
+    }
     this.log(chalk.yellow("debug> "), ...args)
   }
 
+  // print an objects attributes
   inspect(obj) {
     for (var key in obj) {
-      this.debug(key + ': ', obj[key])
+      this.debug(`${key}: ${obj[key]}`)
+    }
+  }
+
+  async initializing() {
+    this.config.defaults({
+      sketchup_version: undefined,
+      debug: false,
+    });
+
+    this.debug("initializing()");
+
+    // get the sketchup version if needed
+    if (this.config.get("sketchup_version") == undefined) {
+      let version = execSync('ruby app/get_version.rb').toString().trim();
+      this.config.set('sketchup_version', version);
     }
   }
 
@@ -76,6 +97,13 @@ module.exports = class extends Generator {
       default: 'MIT',
       choices: licenses,
     });
+
+    this.option('sketchup_version', {
+      type: Number,
+      desc: 'Minimum SketchUp Version',
+      alias: 'm',
+      default: this.config.get("sketchup_version"),
+    });
   }
 
   async prompting() {
@@ -131,16 +159,21 @@ module.exports = class extends Generator {
         default: this.options.summary,
       },
       {
+        name: 'sketchup_version',
+        message: 'Minimum SketchUp Version:',
+        default: this.options.sketchup_version,
+        type: Number,
+      },
+      {
         type: 'list',
         name: 'license',
         message: 'License:',
         default: this.options.license,
         choices: licenses,
-        store: true,
         // validate: (value) => {
         //   return validateString(value) && validateRequired(value)
         // }
-      }
+      },
     ]);
 
 
@@ -179,7 +212,7 @@ module.exports = class extends Generator {
     this.log(`Writing in ${this.destinationPath()}...`);
 
     this._writeTemplate("README.md");
-    this._writeFile("CHANGELOG.md")
+    this._writeTemplate("CHANGELOG.md")
 
     this._writeTemplate(
       "loader.rb",

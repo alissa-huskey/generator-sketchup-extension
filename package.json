@@ -1,22 +1,29 @@
 {
   "name": "generator-sketchup-extension",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "SketchUp Ruby Extension Generator for Yeoman",
-  "homepage": "",
+  "homepage": "http://github.com/alissa-huskey/generator-sketchup-extension",
   "author": {
     "name": "Alissa Huskey",
     "email": "alissa.huskey@gmail.com",
-    "url": ""
+    "url": "http://github.com/alissa-huskey/"
   },
-  "files": [
-    "generators"
-  ],
-  "main": "generators/index.js",
+  "repository": "alissa-huskey/generator-sketchup-extension",
+  "license": "MIT",
   "keywords": [
     "sketchup",
     "ruby",
     "yeoman-generator"
   ],
+  "main": "app/index.js",
+  "files": [
+    "app"
+  ],
+  "scripts": {
+    "test": "mocha test/app.js",
+    "do": "rm -r example && mkdir example && npm link && yo sketchup-extension --dest example --name 'My Plugin' && ls -la example",
+    "zip": "cd example && zip my_plugin.rbz my_plugin/* my_plugin.rb"
+  },
   "devDependencies": {
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.6.0",
@@ -27,7 +34,8 @@
     "lint-staged": "^9.4.3",
     "prettier": "^1.19.1",
     "yeoman-assert": "^3.1.1",
-    "yeoman-test": "^1.7.0"
+    "yeoman-test": "^1.9.1",
+    "mocha": "^10.0.0"
   },
   "engines": {
     "npm": ">= 4.0.0"
@@ -35,7 +43,6 @@
   "dependencies": {
     "chalk": "^2.1.0",
     "generator-license": "^5.5.0",
-    "mocha": "^10.0.0",
     "yeoman-generator": "^3.1.1",
     "yosay": "^2.0.2"
   },
@@ -72,11 +79,5 @@
     "plugins": [
       "prettier"
     ]
-  },
-  "scripts": {
-    "pretest": "eslint .",
-    "test": "jest"
-  },
-  "repository": "alissa-huskey/generator-sketchup-extension",
-  "license": "MIT"
+  }
 }

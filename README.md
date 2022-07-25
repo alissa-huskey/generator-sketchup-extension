@@ -16,6 +16,21 @@ Then generate your new project:
 yo sketchup-extension
 ```
 
+## Development
+
+To run during development, execute the following. Tasks are defined in the
+`scripts` section of `package.json`.
+
+```bash
+npm run do
+```
+
+To run tests:
+
+```bash
+npm run test
+```
+
 ## License
 
 MIT © [Alissa Huskey](http://github.com/alissa-huskey)

@@ -1,7 +1,8 @@
 require "sketchup.rb"
 require "extensions.rb"
 
-ext = SketchupExtension.new "<%- name %>", "<%- fs_name %>/main.rb"
+dir = ::File.expand_path(::File.dirname(__FILE__))
+ext = SketchupExtension.new "<%- name %>", ::File.join(dir, "<%- fs_name %>", "main.rb")
 ext.copyright = "<%- author %> © <%- year %>"
 ext.creator = "<%- author %>"
 ext.version = "<%- version %>"
