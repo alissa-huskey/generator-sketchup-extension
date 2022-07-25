@@ -1,9 +1,10 @@
-2022-07-25 add an option to create the directory if it does not exist
-2022-07-25 add an option to skip the interactive questions
-2022-07-25 don't include LICENSE.txt and relevant sections if unlicensed
-2022-07-25 don't check for Sketchup.version if sketchup_version is blank
-2022-07-25 change appearance of author if no email and/or website
-2022-07-25 add --debug option
+(C) 2022-07-25 add an option to create the directory if it does not exist
+(C) 2022-07-25 add an option to skip the interactive questions
+(B) 2022-07-25 don't include LICENSE.txt and relevant sections if unlicensed
+(B) 2022-07-25 don't check for Sketchup.version if sketchup_version is blank
+(B) 2022-07-25 change appearance of author if no email and/or website
+(C) 2022-07-25 add --debug option
 2022-07-25 pay attention to DEBUG env var
-2022-07-25 fix debug mode
-2022-07-25 add option to initialize git repo
+(A) 2022-07-25 fix debug mode
+
+(B) 2022-07-25 figure out how to rename option to sketchup-version

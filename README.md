@@ -49,7 +49,7 @@ yo sketchup-extension --help
   -w, --website           # Website                   Default: https://example.com
   -s, --summary           # Short description         Default: An extension for SketchUp.
   -l, --license           # License                   Default: MIT
-  -m, --sketchup_version  # Minimum SketchUp version  Default: From installed version, releases, or current year.
+  -m, --sketchup_version  # Minimum SketchUp version  Default: From current year.
 ```
 
 ## Development

@@ -20,6 +20,7 @@
     "app"
   ],
   "scripts": {
+    "lint": "npx eslint app/index.js",
     "test": "mocha test/app.js",
     "do": "rm -r example && mkdir example && npm link && yo sketchup-extension --dest example --name 'My Plugin' && ls -la example",
     "zip": "cd example && zip my_plugin.rbz my_plugin/* my_plugin.rb"
@@ -74,7 +75,9 @@
       "node": true
     },
     "rules": {
-      "prettier/prettier": "error"
+      "prettier/prettier": "error",
+      "camelcase": 0,
+      "guard-for-in": 0
     },
     "plugins": [
       "prettier"
