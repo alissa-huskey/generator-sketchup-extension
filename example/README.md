@@ -31,13 +31,13 @@ View the [CHANGELOG](CHANGELOG.md) for details.
 
 ## Credits
 
-Generated using the [SketchUp Extension generator][generator-sketchup-extension] for [yeoman][].
-
-[generator-sketchup-extension]: http://github.com/alissa-huskey/generator-sketchup-extension
-[yeoman]: http://yeoman.io/
+Generated using the [SketchUp Extension][generator-sketchup-extension] generator for [Yeoman][yeoman].
 
 ## License
 
-Released under the <%- license %> license.
+Released under the MIT license.
 
-<%- author %> © <%- year %>
+Alissa Huskey © 2022
+
+[generator-sketchup-extension]: https://github.com/alissa-huskey/generator-sketchup-extension
+[yeoman]: http://yeoman.io

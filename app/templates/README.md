@@ -29,12 +29,15 @@ zip <%- fs_name %>.rbz <%- fs_name %> <%- fs_name %>.rb
 
 View the [CHANGELOG](CHANGELOG.md) for details.
 
+## Credits
+
+Generated using the [SketchUp Extension][generator-sketchup-extension] generator for [Yeoman][yeoman].
+
 ## License
 
 Released under the <%- license %> license.
 
 <%- author %> © <%- year %>
 
-## Etcetera
-
-Generated using the SketchUp Extension yeoman generator.
+[generator-sketchup-extension]: https://github.com/alissa-huskey/generator-sketchup-extension
+[yeoman]: http://yeoman.io

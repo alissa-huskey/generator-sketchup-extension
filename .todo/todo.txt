@@ -8,3 +8,4 @@
 (A) 2022-07-25 fix debug mode
 
 (B) 2022-07-25 figure out how to rename option to sketchup-version
+2022-07-25 allow for using current directory instead of always creating one

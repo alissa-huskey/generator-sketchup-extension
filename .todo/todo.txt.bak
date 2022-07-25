@@ -4,7 +4,7 @@
 (B) 2022-07-25 don't check for Sketchup.version if sketchup_version is blank
 (B) 2022-07-25 change appearance of author if no email and/or website
 (C) 2022-07-25 add --debug option
-2022-07-25 pay attention to DEBUG env var
+(C) 2022-07-25 pay attention to DEBUG env var
 (A) 2022-07-25 fix debug mode
 
 (B) 2022-07-25 figure out how to rename option to sketchup-version
