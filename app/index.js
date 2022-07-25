@@ -1,10 +1,10 @@
 'use strict';
 const Generator = require('yeoman-generator');
-const chalk = require('chalk');  // CLI colors
-const yosay = require('yosay');  // like cowsay but for yoeman
-const _ = require('lodash');     // utility library
 const licenses = require('generator-license').licenses;
-const execSync = require('child_process').execSync;
+const chalk = require('chalk');                           // CLI colors
+const yosay = require('yosay');                           // like cowsay but for yoeman
+const _ = require('lodash');                              // utility library
+const execSync = require('child_process').execSync;       // shell execution
 
 module.exports = class extends Generator {
   // print a debug message if in debug mode
@@ -50,28 +50,28 @@ module.exports = class extends Generator {
 
     this.option('name', {
       type: String,
-      desc: 'Extension Name',
+      desc: 'Extension name',
       alias: 'n',
       default: _.startCase(this.appname),
     });
 
     this.option('version', {
       type: String,
-      desc: 'Extension Version',
+      desc: 'Extension version',
       alias: 'v',
       default: '0.1.0'
     });
 
     this.option('author', {
       type: String,
-      desc: 'Author Name',
+      desc: 'Author name',
       alais: 'a',
       default: this.user.git.name() || 'John Doe',
     });
 
     this.option('email', {
       type: String,
-      desc: 'Author Email',
+      desc: 'Author email',
       alias: 'e',
       default: this.user.git.email() || 'john.doe@example.com',
     });
@@ -85,7 +85,7 @@ module.exports = class extends Generator {
 
     this.option('summary', {
       type: String,
-      desc: 'Short Description',
+      desc: 'Short description',
       alias: 's',
       default: 'An extension for SketchUp.'
     });
@@ -100,7 +100,7 @@ module.exports = class extends Generator {
 
     this.option('sketchup_version', {
       type: Number,
-      desc: 'Minimum SketchUp Version',
+      desc: 'Minimum SketchUp version',
       alias: 'm',
       default: this.config.get("sketchup_version"),
     });
